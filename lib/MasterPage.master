@@ -35,15 +35,15 @@
 		    </div>
 	    </div>
     </asp:ContentPlaceHolder>
-
-    <asp:ContentPlaceHolder id="MainContent" runat="server">
-        <div>
-            Hello from the Main Content Master Page<br />
-            This text shows up when there is no Content tag with the ID of "MainContent" defined.<br ? />
-            Whoopsie!
-        </div>
-    </asp:ContentPlaceHolder>
-
+    <div id="adbox">
+        <asp:ContentPlaceHolder id="MainContent" runat="server">
+            <div>
+                Hello from the Main Content Master Page<br />
+                This text shows up when there is no Content tag with the ID of "MainContent" defined.<br ? />
+                Whoopsie!
+            </div>
+        </asp:ContentPlaceHolder>
+    </div>
     <asp:ContentPlaceHolder ID="FootContent" runat="server">
         <div id="footer">
             <div class="clearfix">
