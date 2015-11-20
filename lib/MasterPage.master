@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="lib_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="stylesheet" href="~/resources/css/style.css" type="text/css" />
+    <title>Title from the Master</title>
+    <asp:ContentPlaceHolder id="HTMLHeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+        <div id="header">
+		    <div>
+			    <div class="logo">
+				    <a href="index.html">Zero Type</a>
+			    </div>
+			    <ul id="navigation">
+				    <li class="active">
+					    <a href="index.html">Home</a>
+				    </li>
+				    <li>
+    					<a href="features.html">Features</a>
+	    			</li>
+		    		<li>
+			    		<a href="news.html">News</a>
+				    </li>
+    				<li>
+	    				<a href="about.html">About</a>
+		    		</li>
+			    	<li>
+				    	<a href="contact.html">Contact</a>
+				    </li>
+			    </ul>
+		    </div>
+	    </div>
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder id="MainContent" runat="server">
+        <div>
+            Hello from the Main Content Master Page<br />
+            This text shows up when there is no Content tag with the ID of "MainContent" defined.<br ? />
+            Whoopsie!
+        </div>
+    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="FootContent" runat="server">
+        <div id="footer">
+            <div class="clearfix">
+                <p>Made with &#9829; By Analog Galaxy, Inc.</p>
+            </div>
+        </div>
+    </asp:ContentPlaceHolder>
+</body>
+</html>
