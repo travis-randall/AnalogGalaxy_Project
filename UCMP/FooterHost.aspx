@@ -3,7 +3,7 @@
 
 
 <asp:Content runat="server" ID="master" ContentPlaceHolderID="cphHead">
-    <link rel="stylesheet" href="~/Styles/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <title>Footer Host</title>
 </asp:Content>
 
