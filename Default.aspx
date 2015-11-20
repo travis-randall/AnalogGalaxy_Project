@@ -1,11 +1,10 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/lib/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
-    <div class="adbox">
+    <div id="adbox">
         <div class="clearfix">
             <img src="resources/images/box.png" alt="Img" height="342" width="368" />
 			<div>
-                <strong>Hello World!</strong>
 				<h1>Ideas?</h1>
 				<h2>That's what we live for.</h2>
 				<p>
