@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/lib/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
+<%--Landing Page--%>
+
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="clearfix">
         <img src="resources/images/box.png" alt="Img" height="342" width="368" />
