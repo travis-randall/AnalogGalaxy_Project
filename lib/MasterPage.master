@@ -16,22 +16,22 @@
 				    <a> Chip Drop </a>
 			    </div>
 			    <ul id="navigation">
-				    <li class="active">
+				    <li id="li_home" runat="server">
                         <asp:HyperLink ID="hyp_default" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
 				    </li>
-				    <li>
-                        <asp:HyperLink ID="hyp_buy" runat="server">Buy Chips</asp:HyperLink>
+				    <li id="li_buy" runat="server">
+                        <asp:HyperLink ID="hyp_buy" runat="server" NavigateUrl="~/Buy-chips.aspx">Buy Chips</asp:HyperLink>
     					<%--<a href="features.html">Consumer Portal</a>--%>
 	    			</li>
-		    		<li>
-                        <asp:HyperLink ID="hyp_sell" runat="server">Sell Chips</asp:HyperLink>
+		    		<li id="li_sell" runat="server">
+                        <asp:HyperLink ID="hyp_sell" runat="server" NavigateUrl="~/Sell-chips.aspx">Sell Chips</asp:HyperLink>
 			    		<%--<a href="news.html"></a>--%>
 				    </li>
-    				<li>
+    				<li id="li_about" runat="server">
                         <asp:HyperLink ID="hyp_about" runat="server">My Account</asp:HyperLink>
 	    				<%--<a href="about.html">About</a>--%>
 		    		</li>
-			    	<li>
+			    	<li id="li_contact" runat="server">
                         <asp:HyperLink ID="hyp_contact" runat="server" NavigateUrl="~/Contact_us.aspx">Contact Us</asp:HyperLink>
 				    </li>
 			    </ul>
