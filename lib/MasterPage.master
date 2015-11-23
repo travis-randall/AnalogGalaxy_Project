@@ -17,19 +17,22 @@
 			    </div>
 			    <ul id="navigation">
 				    <li class="active">
-					    <a href="index.html">Home</a>
+                        <asp:HyperLink ID="hyp_default" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
 				    </li>
 				    <li>
-    					<a href="features.html">Features</a>
+                        <asp:HyperLink ID="hyp_buy" runat="server">Buy Chips</asp:HyperLink>
+    					<%--<a href="features.html">Consumer Portal</a>--%>
 	    			</li>
 		    		<li>
-			    		<a href="news.html">News</a>
+                        <asp:HyperLink ID="hyp_sell" runat="server">Sell Chips</asp:HyperLink>
+			    		<%--<a href="news.html"></a>--%>
 				    </li>
     				<li>
-	    				<a href="about.html">About</a>
+                        <asp:HyperLink ID="hyp_about" runat="server">My Account</asp:HyperLink>
+	    				<%--<a href="about.html">About</a>--%>
 		    		</li>
 			    	<li>
-				    	<a href="contact.html">Contact</a>
+                        <asp:HyperLink ID="hyp_contact" runat="server" NavigateUrl="~/Contact_us.aspx">Contact Us</asp:HyperLink>
 				    </li>
 			    </ul>
 		    </div>
