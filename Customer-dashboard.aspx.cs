@@ -9,4 +9,9 @@ public partial class Default6 : System.Web.UI.Page {
     protected void Page_Load(object sender, EventArgs e) {
 
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        //Response.Redirect(Chip-request.aspx);
+    }
 }
