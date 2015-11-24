@@ -1,7 +1,7 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/lib/MasterPage.master" AutoEventWireup="true" CodeFile="Chip-request.aspx.cs" Inherits="Chip-request.aspx.cs" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/lib/MasterPage.master" AutoEventWireup="true" CodeFile="Chip-request.aspx.cs" Inherits="Chip_request" %>
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
-    
+    <form runat="server" id="frm_chip_request">
 
 
     <div>
@@ -12,14 +12,10 @@
     <div>
         <p>&nbsp;</p>
        
-        To request wood chips, fill out the form below and you will be put on a waiting list for wood chips to be sent out to you 
-       
-               
-            <br />
-        <br />
-       
-               
-            <br />
+        To request wood chips, fill out the form below and you will be put on a waiting list for wood chips to be sent out to you         
+       <br />
+       <br />        
+       <br />
        <table>
            <tr>
                <td>Name</td>
@@ -127,5 +123,5 @@
     </div>
 
 
-    
+    </form>
 </asp:Content>
