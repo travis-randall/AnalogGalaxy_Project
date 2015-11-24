@@ -9,8 +9,4 @@ public partial class Default5 : System.Web.UI.Page {
     protected void Page_Load(object sender, EventArgs e) {
 
     }
-
-    protected void ListView1_SelectedIndexChanged(object sender, EventArgs e) {
-        
-    }
 }

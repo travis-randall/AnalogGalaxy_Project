@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/lib/MasterPage.master" AutoEventWireup="true" CodeFile="Buy-chips.aspx.cs" Inherits="Default4" %>
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
-<!-- Stuff Goes Here -->
+<!-- A customer will come here looking to buy chips, so list producers looking to dispose of chips -->
     <div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
             ConnectionString="<%$ ConnectionStrings:ChipDrop %>"

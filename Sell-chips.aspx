@@ -1,17 +1,10 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/lib/MasterPage.master" AutoEventWireup="true" CodeFile="Sell-chips.aspx.cs" Inherits="Default5" %>
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
-    <!--
-        This page lists the producer market, which is where producers will go to find consumers.
-            aka list people looking to buy chips, so this listing is 
-        @author anhany
-    -->
+    <!-- Producers will come here looking for customers to buy their chips, so list customer chip requests here. -->
     <div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ChipDrop %>" SelectCommand="SELECT cd.disposal_id, p.name, p.city, p.state, p.phone, cd.qty, cd.date_available
-FROM ChipDisposal AS cd
-JOIN Producer AS p ON (cd.producer_id = p.producer_id)
-;"></asp:SqlDataSource>
-        <asp:ListView ID="ListView1" runat="server" DataKeyNames="disposal_id" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ChipDrop %>" SelectCommand="SELECT cr.request_id, c.name, c.city, c.phone, q.description AS qty, cr.date_available FROM ChipRequest AS cr INNER JOIN Customer AS c ON cr.customer_id = c.customer_id INNER JOIN ChipQty AS q ON cr.qty_id = q.qty_id"></asp:SqlDataSource>
+        <asp:ListView ID="ListView1" runat="server" DataKeyNames="request_id" DataSourceID="SqlDataSource1">
             <LayoutTemplate>
                 <table runat="server">
                     <tr runat="server">
@@ -20,12 +13,11 @@ JOIN Producer AS p ON (cd.producer_id = p.producer_id)
                                 <tr runat="server" style="background-color:#DCDCDC;color: #000000;">
                                     <th runat="server">Name</th>
                                     <th runat="server">City</th>
-                                    <th runat="server">State</th>
                                     <th runat="server">Phone</th>
                                     <th runat="server">Quantity</th>
                                     <th runat="server">Date Available</th>
                                 </tr>
-                                <tr id="itemPlaceholder" runat="server">
+                                <tr runat="server" id="itemPlaceholder">
                                 </tr>
                             </table>
                         </td>
@@ -50,13 +42,10 @@ JOIN Producer AS p ON (cd.producer_id = p.producer_id)
                         <asp:Label ID="cityLabel" runat="server" Text='<%# Eval("city") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="stateLabel" runat="server" Text='<%# Eval("state") %>' />
-                    </td>
-                    <td>
                         <asp:Label ID="phoneLabel" runat="server" Text='<%# Eval("phone") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="qtyLabel" runat="server" Text='<%# Eval("qty", "{0:f}") %>' />
+                        <asp:Label ID="qtyLabel" runat="server" Text='<%# Eval("qty") %>' />
                     </td>
                     <td>
                         <asp:Label ID="date_availableLabel" runat="server" Text='<%# Eval("date_available", "{0:d}") %>' />
@@ -72,13 +61,10 @@ JOIN Producer AS p ON (cd.producer_id = p.producer_id)
                         <asp:Label ID="cityLabel" runat="server" Text='<%# Eval("city") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="stateLabel" runat="server" Text='<%# Eval("state") %>' />
-                    </td>
-                    <td>
                         <asp:Label ID="phoneLabel" runat="server" Text='<%# Eval("phone") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="qtyLabel" runat="server" Text='<%# Eval("qty", "{0:f}") %>' />
+                        <asp:Label ID="qtyLabel" runat="server" Text='<%# Eval("qty") %>' />
                     </td>
                     <td>
                         <asp:Label ID="date_availableLabel" runat="server" Text='<%# Eval("date_available", "{0:d}") %>' />
