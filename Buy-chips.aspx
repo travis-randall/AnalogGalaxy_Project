@@ -5,9 +5,10 @@
     <div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
             ConnectionString="<%$ ConnectionStrings:ChipDrop %>"
-            SelectCommand="SELECT cd.disposal_id, c.producer_id, c.name, c.city, c.state, cd.qty, cd.date_available
+            SelectCommand="SELECT cd.disposal_id, c.producer_id, c.name, c.city, c.state, q.description AS qty, cd.price, cd.date_available
                             FROM ChipDisposal AS cd
-                            JOIN Producer AS c ON (c.producer_id = cd.producer_id)">
+                            JOIN Producer AS c ON (c.producer_id = cd.producer_id)
+                            JOIN ChipQty AS q ON (cd.qty_id = q.qty_id)">
         </asp:SqlDataSource>
         <asp:ListView ID="ListView1" runat="server" DataKeyNames="request_id,customer_id" DataSourceID="SqlDataSource1">
             <LayoutTemplate>
@@ -20,6 +21,7 @@
                                     <th runat="server">City</th>
                                     <th runat="server">State</th>
                                     <th runat="server">Quantity</th>
+                                    <th runat="server">Price</th>
                                     <th runat="server">Date Available</th>
                                 </tr>
                                 <tr id="itemPlaceholder" runat="server">
@@ -50,7 +52,10 @@
                         <asp:Label ID="stateLabel" runat="server" Text='<%# Eval("state") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="qtyLabel" runat="server" Text='<%# Eval("qty", "{0:f}") %>' />
+                        <asp:Label ID="qtyLabel" runat="server" Text='<%# Eval("qty") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="priceLabel" runat="server" Text='<% Eval("price", "{0:f}") %>' />
                     </td>
                     <td>
                         <asp:Label ID="date_availableLabel" runat="server" Text='<%# Eval("date_available", "{0:d}") %>' />
@@ -72,64 +77,13 @@
                         <asp:Label ID="qtyLabel" runat="server" Text='<%# Eval("qty", "{0:f}") %>' />
                     </td>
                     <td>
+                        <asp:Label ID="priceLabel" runat="server" Text='<% Eval("price", "{0:f}") %>' />
+                    </td>
+                    <td>
                         <asp:Label ID="date_availableLabel" runat="server" Text='<%# Eval("date_available", "{0:d}") %>' />
                     </td>
                 </tr>
             </AlternatingItemTemplate>
-            <SelectedItemTemplate>
-                <tr style="background-color: #E2DED6;font-weight: bold;color: #333333;">
-                    <td>
-                        <asp:Label ID="request_idLabel" runat="server" Text='<%# Eval("request_id") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="customer_idLabel" runat="server" Text='<%# Eval("customer_id") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="cityLabel" runat="server" Text='<%# Eval("city") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="stateLabel" runat="server" Text='<%# Eval("state") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="qtyLabel" runat="server" Text='<%# Eval("qty") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="date_availableLabel" runat="server" Text='<%# Eval("date_available") %>' />
-                    </td>
-                </tr>
-            </SelectedItemTemplate>
-<%--          <EditItemTemplate>
-                <tr style="background-color: #999999;">
-                    <td>
-                        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
-                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
-                    </td>
-                    <td>
-                        <asp:Label ID="request_idLabel1" runat="server" Text='<%# Eval("request_id") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="customer_idLabel1" runat="server" Text='<%# Eval("customer_id") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="cityTextBox" runat="server" Text='<%# Bind("city") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="stateTextBox" runat="server" Text='<%# Bind("state") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="qtyTextBox" runat="server" Text='<%# Bind("qty") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="date_availableTextBox" runat="server" Text='<%# Bind("date_available") %>' />
-                    </td>
-                </tr>
-            </EditItemTemplate>--%>
             <EmptyDataTemplate>
                 <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
                     <tr>
@@ -137,35 +91,6 @@
                     </tr>
                 </table>
             </EmptyDataTemplate>
-<%--            <InsertItemTemplate>
-                <tr style="">
-                    <td>
-                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
-                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="request_idTextBox" runat="server" Text='<%# Bind("request_id") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="customer_idTextBox" runat="server" Text='<%# Bind("customer_id") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="nameTextBox" runat="server" Text='<%# Bind("name") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="cityTextBox" runat="server" Text='<%# Bind("city") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="stateTextBox" runat="server" Text='<%# Bind("state") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="qtyTextBox" runat="server" Text='<%# Bind("qty") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="date_availableTextBox" runat="server" Text='<%# Bind("date_available") %>' />
-                    </td>
-                </tr>
-            </InsertItemTemplate>--%>
         </asp:ListView>
     </div>
 </asp:Content>
