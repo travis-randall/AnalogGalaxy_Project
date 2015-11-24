@@ -28,7 +28,7 @@
 			    		<%--<a href="news.html"></a>--%>
 				    </li>
     				<li id="li_about" runat="server">
-                        <asp:HyperLink ID="hyp_about" runat="server">My Account</asp:HyperLink>
+                        <asp:HyperLink ID="hyp_my_account" runat="server">My Account</asp:HyperLink>
 	    				<%--<a href="about.html">About</a>--%>
 		    		</li>
 			    	<li id="li_contact" runat="server">
