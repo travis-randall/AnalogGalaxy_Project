@@ -34,8 +34,7 @@ img {
 	visibility:hidden;
 }
 .btn {
-	background: url(../images/bg-button.png) no-repeat;
-	background-position: 0 -70px;
+	background: url('resources/images/bg-button.png') no-repeat 0 -70px;
 	color: #fff;
 	display: inline-block;
 	font: 24px/60px 'OpenSans';
@@ -65,7 +64,7 @@ img {
 	margin-right: 20px;
 }
 #header .logo a {
-	background: url(../images/logo.png) no-repeat center top;
+	background: url('resources/images/logo.png') no-repeat center top;
 	color: #000;
 	display: block;
 	font: 15px/30px 'Play';
@@ -107,7 +106,7 @@ img {
 	color: #f99600;
 }
 #adbox {
-	background: url(../images/bg-adbox.jpg) repeat-x left top;
+	background: url('resources/images/bg-adbox.jpg') repeat-x left top;
 	height: 380px;
 	padding: 60px 0;
 }
@@ -238,7 +237,7 @@ p a {
 /** main **/
 .main {
 	float: left;
-	background: url(../images/divider.png) repeat-y right top;
+	background: url('resources/images/divider.png') repeat-y right top;
 	min-height: 100px;
 	width: 620px;
 	padding-right: 24px;
@@ -378,7 +377,7 @@ p a {
 	margin-right: 30px;
 }
 #connect a {
-	background: url(../images/icons.png) no-repeat;
+	background: url('resources/images/icons.png') no-repeat;
 	display: inline-block;
 	height: 30px;
 	width: 30px;
