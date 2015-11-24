@@ -2,23 +2,21 @@
 
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
-    <div align="center">
-        <h1 align="center">Contact Us</h1>
+    <div>
+        <h1>Contact Us</h1>
         <br />
         <p>
         We would love to hear from you.  For any questions or feedback, please fill out the the form below
-        <p>
-               
+        </p>
+        <form runat="server" id="Form">
+            <asp:Label ID="lblName" runat="server" Text="Your Name" /><br />
+            <asp:TextBox ID="txtName" runat="server"></asp:TextBox><br /><br />
+            <asp:Label ID="lblEmail" runat="server" Text="Email" /><br />
+            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox><br /><br />
+            <asp:Label ID="lblMessage" runat="server" Text="Message" /><br />
+            <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine"></asp:TextBox><br />
             <br />
-            Your Name<br />
-            <asp:TextBox ID="txtName" runat="server"></asp:TextBox><br />
-            Email<br />
-            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox><br />
-            Message<br />
-            </asp:Label><asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine"></asp:TextBox><br />
-            </p>
             <asp:Button ID="Button1" runat="server" Text="Send" />
-            </p>
-
+        </form>
     </div>
 </asp:Content>

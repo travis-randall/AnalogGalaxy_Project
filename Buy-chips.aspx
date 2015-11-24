@@ -7,7 +7,7 @@
             ConnectionString="<%$ ConnectionStrings:ChipDrop %>"
             SelectCommand="SELECT cd.disposal_id, c.producer_id, c.name, c.city, c.state, cd.qty, cd.date_available
                             FROM ChipDisposal AS cd
-                            JOIN Producer AS c ON (c.producer_id = cd.producer_id">
+                            JOIN Producer AS c ON (c.producer_id = cd.producer_id)">
         </asp:SqlDataSource>
         <asp:ListView ID="ListView1" runat="server" DataKeyNames="request_id,customer_id" DataSourceID="SqlDataSource1">
             <LayoutTemplate>
