@@ -37,6 +37,9 @@
 			    </ul>
 		    </div>
 	    </div>
+        <div id="breadcrumb">
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+        </div>
     </asp:ContentPlaceHolder>
     <div id="adbox">
         <asp:ContentPlaceHolder id="MainContent" runat="server">
