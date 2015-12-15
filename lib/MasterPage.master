@@ -32,7 +32,7 @@
 	    				<%--<a href="about.html">About</a>--%>
 		    		</li>
 			    	<li id="li_contact" runat="server">
-                        <asp:HyperLink ID="hyp_contact" runat="server" NavigateUrl="~/Contact_us.aspx">Contact Us</asp:HyperLink>
+                        <asp:HyperLink ID="hyp_contact" runat="server" NavigateUrl="~/Contact-us.aspx">Contact Us</asp:HyperLink>
 				    </li>
 			    </ul>
 		    </div>
