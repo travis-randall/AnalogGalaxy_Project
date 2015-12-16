@@ -6,6 +6,8 @@
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
 
+    <uc1:UserInfoControl runat="server" ID="UserInfoControl" />
+
         <div id="content">
             <asp:Button ID="Button1" runat="server" Text="Chip Request Form" OnClick="Button1_Click" />
         </div>
@@ -15,7 +17,5 @@
         <br />
         <h2>Expired Chip Request</h2>
         <asp:TextBox ID="TextBox2" runat="server" Height="130px" ReadOnly="True" TextMode="MultiLine" Width="900px" Wrap="False"></asp:TextBox>
-
-    <uc1:UserInfoControl runat="server" ID="UserInfoControl" />
 
 </asp:Content>
