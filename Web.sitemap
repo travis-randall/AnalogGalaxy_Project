@@ -6,8 +6,12 @@
       <siteMapNode title="Sell Chips" url="~/Sell-chips.aspx"/>
     </siteMapNode>
     <siteMapNode title="Account">
-      <siteMapNode title="Consumer Dashboard" url="~/Consumer-dashboard.aspx" />
-      <siteMapNode title="Producer Dashboard" url="~/Producer-dashboard.aspx" />
+      <siteMapNode title="Consumer Dashboard" url="~/Consumer-dashboard.aspx">
+        <siteMapNode title="Chip Request Form" />
+      </siteMapNode>
+      <siteMapNode title="Producer Dashboard" url="~/Producer-dashboard.aspx">
+        <siteMapNode title="Chip Disposal Form" />
+      </siteMapNode>
     </siteMapNode>
     <siteMapNode title="Contact Us" />
   </siteMapNode>
