@@ -3,7 +3,8 @@
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
     <!-- Producers will come here looking for customers to buy their chips, so list customer chip requests here. -->
     <div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ChipDrop %>" SelectCommand="SELECT cr.request_id, c.name, c.city, c.phone, q.description AS qty, cr.date_available FROM ChipRequest AS cr INNER JOIN Customer AS c ON cr.customer_id = c.customer_id INNER JOIN ChipQty AS q ON cr.qty_id = q.qty_id"></asp:SqlDataSource>
+        <h2>Sell Chips</h2>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ChipDrop %>" SelectCommand="SELECT cr.request_id, CONCAT(c.first_name, ' ', c.last_name) AS name, c.city, c.phone, q.description AS qty, cr.date_available FROM ChipRequest AS cr INNER JOIN Customer AS c ON cr.customer_id = c.customer_id INNER JOIN ChipQty AS q ON cr.qty_id = q.qty_id"></asp:SqlDataSource>
         <asp:ListView ID="ListView1" runat="server" DataKeyNames="request_id" DataSourceID="SqlDataSource1">
             <LayoutTemplate>
                 <table runat="server">

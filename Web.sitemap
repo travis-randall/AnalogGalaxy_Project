@@ -5,7 +5,10 @@
       <siteMapNode title="Buy Chips" url="~/Buy-chips.aspx"/>
       <siteMapNode title="Sell Chips" url="~/Sell-chips.aspx"/>
     </siteMapNode>
-    <siteMapNode title="Account" />
+    <siteMapNode title="Account">
+      <siteMapNode title="Consumer Dashboard" url="~/Consumer-dashboard.aspx" />
+      <siteMapNode title="Producer Dashboard" url="~/Producer-dashboard.aspx" />
+    </siteMapNode>
     <siteMapNode title="Contact Us" />
   </siteMapNode>
 </siteMap>
