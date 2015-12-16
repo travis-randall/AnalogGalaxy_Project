@@ -12,23 +12,31 @@
       
         <table>
            <tr>
-               <td>Company Name</td>
+               <td>
+                   <asp:Label ID="lblCompanyName" runat="server" Text="Label">Company Name</asp:Label>
+               </td>
            </tr>
            <tr>
                <td><asp:TextBox ID="txtName" runat="server"></asp:TextBox></td>
            </tr>
            <tr>
-               <td>Company Address</td>
+               <td>
+                   <asp:Label ID="lblCompanyAddr" runat="server" Text="Label">Company Address</asp:Label>
+               </td>
            </tr>
            <tr>
                <td><asp:TextBox ID="txtEmail" runat="server"></asp:TextBox></td>
            </tr>
            <tr>
-               <td>City</td>
-               <td>State</td>
+               <td>
+                   <asp:Label ID="lblCity" runat="server" Text="Label">City</asp:Label>
+               </td>
+               <td>
+                   <asp:Label ID="lblState" runat="server" Text="Label">State</asp:Label>
+               </td>
            </tr>
            <tr>
-               <td><asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td>
+               <td><asp:TextBox ID="txtCity" runat="server"></asp:TextBox></td>
                <td><asp:DropDownList ID="DropDownListState" runat="server">
 	    <asp:ListItem Value="AL">Alabama</asp:ListItem>
 	    <asp:ListItem Value="AK">Alaska</asp:ListItem>
@@ -84,25 +92,29 @@
 </asp:DropDownList></td>
            </tr>
            <tr>
-               <td>Zip Code</td>
+               <td>
+                   <asp:Label ID="lblZip" runat="server" Text="Label">Zip Code</asp:Label></td>
            </tr>
            <tr>
-               <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
-           </tr>
-           <tr>
-               <td>Company Representative</td>
-               <td>Contact Number</td>
-           </tr>
-           <tr>
-               <td><asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></td>
-               <td><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>
-           </tr>
-           <tr>
-               <td>Quantity of Chips</td>
+               <td><asp:TextBox ID="txtZip" runat="server"></asp:TextBox></td>
            </tr>
            <tr>
                <td>
-                   <asp:DropDownList ID="DropDownList1" runat="server">
+                   <asp:Label ID="lblCompanyRep" runat="server" Text="Label">Company Representative</asp:Label></td>
+               <td>
+                   <asp:Label ID="lblContactPhone" runat="server" Text="Label">Contact Number</asp:Label></td>
+           </tr>
+           <tr>
+               <td><asp:TextBox ID="txtCompanyRep" runat="server"></asp:TextBox></td>
+               <td><asp:TextBox ID="txtContactPhone" runat="server"></asp:TextBox></td>
+           </tr>
+           <tr>
+               <td>
+                   <asp:Label ID="lblChipQuantity" runat="server" Text="Label">Quantity of Chips</asp:Label></td>
+           </tr>
+           <tr>
+               <td>
+                   <asp:DropDownList ID="ddlChipQuantity" runat="server">
 	    <asp:ListItem Value="Small">Small</asp:ListItem>
 	    <asp:ListItem Value="Medium">Medium</asp:ListItem>
 	    <asp:ListItem Value="Large">Large</asp:ListItem>
