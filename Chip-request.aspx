@@ -18,7 +18,7 @@
        <table>
            <tr>
                <td>
-                   <asp:Label ID="lblEmail" runat="server" Text="Label">Email</asp:Label>
+                   <asp:Label ID="lblResults" runat="server" Text="Label"></asp:Label>
                </td>
            </tr>
            <tr>
