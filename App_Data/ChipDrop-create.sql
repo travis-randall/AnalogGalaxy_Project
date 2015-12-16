@@ -44,7 +44,7 @@ CREATE TABLE ChipDisposal ( -- producers looking to sell.
 	CONSTRAINT ChipDisposal_producer_id_fk FOREIGN KEY (producer_id) 
 			REFERENCES Producer (producer_id),
 	CONSTRAINT ChipDisposal_qty_id_fk FOREIGN KEY (qty_id)
-			REFERENCES ChipQuantity (qty_id)
+			REFERENCES ChipQty (qty_id)
 );
 
 CREATE TABLE Customer (

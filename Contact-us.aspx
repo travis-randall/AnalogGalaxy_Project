@@ -8,7 +8,6 @@
         <p>
         We would love to hear from you.  For any questions or feedback, please fill out the the form below
         </p>
-        <form runat="server" id="form">
             <asp:Label ID="lblName" runat="server" Text="Your Name" /><br />
             <asp:TextBox ID="txtName" runat="server"></asp:TextBox><br /><br />
             <asp:Label ID="lblEmail" runat="server" Text="Email" /><br />
@@ -17,6 +16,5 @@
             <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine"></asp:TextBox><br />
             <br />
             <asp:Button ID="Button1" runat="server" Text="Send" />
-        </form>
     </div>
 </asp:Content>

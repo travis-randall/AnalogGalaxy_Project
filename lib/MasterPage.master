@@ -9,12 +9,15 @@
     <asp:ContentPlaceHolder id="HTMLHeadContent" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
+    <form runat="server">
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
         <div id="header">
 		    <div>
 			    <div class="title">
 				    <a> Chip Drop </a>
-			    </div>
+                    <br />
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                </div>
 			    <ul id="navigation">
 				    <li id="li_home" runat="server">
                         <asp:HyperLink ID="hyp_default" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
@@ -58,5 +61,6 @@
             </div>
         </div>
     </asp:ContentPlaceHolder>
+  </form>
 </body>
 </html>

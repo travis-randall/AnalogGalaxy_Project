@@ -6,8 +6,6 @@
     - Redirect to either the producer dashboard with a success message, or back to wherever they came from with said message
 -->
 
-    <form runat="server" id="frm_chip_disposal">
-
         <h2>Chip Disposal Form</h2><br />
         To request a chip drop-ff, fill out the form below and you will<br />
          be assigned a chip drop.<br /><br />
@@ -118,5 +116,4 @@
         </table> 
 
 
-    </form>
 </asp:Content>

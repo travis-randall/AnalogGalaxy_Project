@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/lib/MasterPage.master" AutoEventWireup="true" CodeFile="Chip-request.aspx.cs" Inherits="Chip_request" %>
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
-    <form runat="server" id="frm_chip_request">
 
 
     <div>
@@ -123,5 +122,4 @@
     </div>
 
 
-    </form>
 </asp:Content>
