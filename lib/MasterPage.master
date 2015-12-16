@@ -38,6 +38,7 @@
 		    </div>
 	    </div>
         <div id="breadcrumb">
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
             <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
         </div>
     </asp:ContentPlaceHolder>
