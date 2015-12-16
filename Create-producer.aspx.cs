@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 public partial class Default8 : System.Web.UI.Page {
 
-    private string connectionString = WebConfigurationManager.ConnectionStrings["chip_drop"].ConnectionString;
+    private string connectionString = WebConfigurationManager.ConnectionStrings["ChipDrop"].ConnectionString;
 
     protected void Page_Load(object sender, EventArgs e) {
 
@@ -17,18 +17,15 @@ public partial class Default8 : System.Web.UI.Page {
 
     protected void Button1_Click(object sender, EventArgs e)
     {
+
         Profile.FirstName = TextBox1.Text;
         Profile.PhoneNumber = TextBox2.Text;
         Profile.Address.Street = TextBox3.Text;
         Profile.Address.City = TextBox4.Text;
-        Profile.Address.State = TextBox5.Text;
+        Profile.Address.State = DropDownListState.Text;
         Profile.Address.Zip = TextBox6.Text;
-    }
 
-    protected void cmdInsert_Click(object sender, EventArgs e)
-    {
-
-        if (TextBox1.Text == "" || TextBox2.Text == "" || TextBox3.Text == "" || TextBox4.Text == "" || TextBox5.Text == "" || TextBox6.Text == "" )
+        if (TextBox1.Text == "" || TextBox2.Text == "" || TextBox3.Text == "" || TextBox4.Text == "" || DropDownListState.Text == "" || TextBox6.Text == "" )
         {
             lblResults.Text = "Records require an ID, first name, and last name.";
             return;
@@ -51,7 +48,7 @@ public partial class Default8 : System.Web.UI.Page {
         cmd.Parameters.AddWithValue("@phone", TextBox2.Text);
         cmd.Parameters.AddWithValue("@address", TextBox3.Text);
         cmd.Parameters.AddWithValue("@city", TextBox4.Text);
-        cmd.Parameters.AddWithValue("@state", TextBox5.Text);
+        cmd.Parameters.AddWithValue("@state", DropDownListState.Text);
         cmd.Parameters.AddWithValue("@zip", TextBox6.Text);
 
         // Try to open the database and execute the update.

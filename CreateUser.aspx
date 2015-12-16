@@ -3,7 +3,26 @@
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
 
     <div>
-        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" Height="377px" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt">
+        <table>
+            <tr>
+                <td align="center" colspan="2">Sign Up for Your New Account</td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="Label1" runat="server" Text="Customer / Company"></asp:Label>
+                </td>
+                <td>
+                    <asp:RadioButtonList ID="rbl1" runat="server" AutoPostBack="True">
+                        <asp:ListItem>Consumer</asp:ListItem>
+                        <asp:ListItem>Producer</asp:ListItem>
+                    </asp:RadioButtonList>
+                </td>
+           </tr>
+        </table>
+    </div>
+
+    <div>
+        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" Height="377px" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt" OnCreatedUser="CreateUserWizard1_CreatedUser">
             <ContinueButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" ForeColor="#284775" />
             <CreateUserButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" ForeColor="#284775" />
             <TitleTextStyle BackColor="#6B696B" Font-Bold="True" ForeColor="#FFFFFF" />
@@ -11,21 +30,6 @@
                 <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
                     <ContentTemplate>
                         <table style="font-size:100%;height:377px;">
-                            <tr>
-                                <td align="center" colspan="2">Sign Up for Your New Account</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Label ID="Label1" runat="server" Text="Customer / Company"></asp:Label>
-                               </td>
-                                <td>
-                                    <asp:RadioButtonList ID="RadioButtonList1" runat="server">
-                                        <asp:ListItem>Customer</asp:ListItem>
-                                        <asp:ListItem>Company</asp:ListItem>
-                                    </asp:RadioButtonList>
-                                </td>
-                            </tr>
-
                             <tr>
                                 <td align="right">
                                     <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>

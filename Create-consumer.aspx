@@ -61,5 +61,5 @@
                     </td>
                 </tr>
             </table>
-    <asp:Button ID="Button1" runat="server" Text="Save" />
+    <asp:Button ID="Button1" runat="server" Text="Save" OnClick="Button1_Click" />
 </asp:Content>
