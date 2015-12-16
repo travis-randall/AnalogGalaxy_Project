@@ -3,14 +3,15 @@
 <%@ Register Src="~/lib/UserInfoControl.ascx" TagPrefix="uc1" TagName="UserInfoControl" %>
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
-
+    <uc1:userinfocontrol id="UserInfoControl" runat="server"></uc1:userinfocontrol>
         <div id="content">
             <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Chip Disposal Form</asp:LinkButton>
         </div>
         <h2>Active Chip Request</h2>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ChipDrop %>' DeleteCommand="DELETE FROM [ChipDisposal] WHERE [disposal_id] = @disposal_id" InsertCommand="INSERT INTO [ChipDisposal] ([disposal_id], [producer_id], [qty_id], [date_available], [date_expire], [price]) VALUES (@disposal_id, @producer_id, @qty_id, @date_available, @date_expire, @price)" SelectCommand="SELECT cd.disposal_id, cd.producer_id, cd.qty_id, cq.description, cd.date_available, cd.date_expire, cd.price
 FROM ChipDisposal AS cd
-JOIN ChipQty AS cq ON (cd.qty_id = cq.qty_id)"
+JOIN ChipQty AS cq ON (cd.qty_id = cq.qty_id)
+WHERE cd.date_available < CURRENT_TIMESTAMP AND cd.date_expire > CURRENT_TIMESTAMP"
         UpdateCommand="UPDATE [ChipDisposal] SET [producer_id] = @producer_id, [qty_id] = @qty_id, [date_available] = @date_available, [date_expire] = @date_expire, [price] = @price WHERE [disposal_id] = @disposal_id">
         <DeleteParameters>
             <asp:Parameter Name="disposal_id" Type="Int32"></asp:Parameter>
@@ -49,7 +50,7 @@ JOIN ChipQty AS cq ON (cd.qty_id = cq.qty_id)"
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString='<%$ ConnectionStrings:ChipDrop %>' DeleteCommand="DELETE FROM [ChipDisposal] WHERE [disposal_id] = @disposal_id" InsertCommand="INSERT INTO [ChipDisposal] ([disposal_id], [producer_id], [qty_id], [date_available], [date_expire], [price]) VALUES (@disposal_id, @producer_id, @qty_id, @date_available, @date_expire, @price)" SelectCommand="SELECT cd.disposal_id, cd.producer_id, cd.qty_id, cq.description, cd.date_available, cd.date_expire, cd.price
 FROM ChipDisposal AS cd
 JOIN ChipQty AS cq ON (cd.qty_id = cq.qty_id)
-WHERE cd.date_expire > CURRENT_TIMESTAMP" UpdateCommand="UPDATE [ChipDisposal] SET [producer_id] = @producer_id, [qty_id] = @qty_id, [date_available] = @date_available, [date_expire] = @date_expire, [price] = @price WHERE [disposal_id] = @disposal_id">
+WHERE cd.date_expire < CURRENT_TIMESTAMP" UpdateCommand="UPDATE [ChipDisposal] SET [producer_id] = @producer_id, [qty_id] = @qty_id, [date_available] = @date_available, [date_expire] = @date_expire, [price] = @price WHERE [disposal_id] = @disposal_id">
         <DeleteParameters>
             <asp:Parameter Name="disposal_id" Type="Int32"></asp:Parameter>
         </DeleteParameters>
@@ -82,6 +83,4 @@ WHERE cd.date_expire > CURRENT_TIMESTAMP" UpdateCommand="UPDATE [ChipDisposal] S
             <asp:BoundField DataField="price" HeaderText="Price" SortExpression="price"></asp:BoundField>
         </Columns>
     </asp:GridView>
-    <uc1:UserInfoControl runat="server" ID="UserInfoControl" />
-
 </asp:Content>

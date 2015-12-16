@@ -1,24 +1,14 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/lib/MasterPage.master" AutoEventWireup="true" CodeFile="Chip-request.aspx.cs" Inherits="Chip_request" %>
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
-
-
     <div>
         <h2>Chip Request Form</h2>
-           
-
     </div>
     <div>
-        <p>&nbsp;</p>
-       
-        To request wood chips, fill out the form below and you will be put on a waiting list for wood chips to be sent out to you         
-       <br />
-       <br />        
-       <br />
        <table>
            <tr>
                <td>
-                   <asp:Label ID="lblResults" runat="server" Text="Label"></asp:Label>
+                   <asp:Label ID="lblResults" runat="server"></asp:Label>
                </td>
            </tr>
            <tr>
@@ -26,11 +16,8 @@
            </tr>
            <tr>
                <td>
-                   <asp:DropDownList ID="ddlChipQuantity" runat="server">
-	    <asp:ListItem Value="Small">Small</asp:ListItem>
-	    <asp:ListItem Value="Medium">Medium</asp:ListItem>
-	    <asp:ListItem Value="Large">Large</asp:ListItem>
-                       </asp:DropDownList>
+                   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ChipDrop %>' SelectCommand="SELECT [qty_id], [description] FROM [ChipQty]"></asp:SqlDataSource>
+                   <asp:DropDownList ID="ddlChipQuantity" runat="server" DataSourceID="SqlDataSource1" DataTextField="description" DataValueField="qty_id"></asp:DropDownList>
                </td>
            </tr>
            <tr>
@@ -46,10 +33,8 @@
                </td>
            </tr>
            <tr>
-               <td><asp:Button ID="Button1" runat="server" Text="Submit" /></td>
+               <td><asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" /></td>
            </tr>
         </table>
     </div>
-
-
 </asp:Content>

@@ -1,9 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UserInfoControl.ascx.cs" Inherits="lib_UserInfoControl" %>
 
 <h1>Welcome <asp:LoginName ID="LoginName1" runat="server" /></h1>
-<a href="Default.aspx">Home</a><br />
-<a href="Chip-Request.aspx">Chip Request Form</a><br /><br />
-
 
 <table>
                 <tr>

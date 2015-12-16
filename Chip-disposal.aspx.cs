@@ -18,17 +18,18 @@ public partial class Default3 : System.Web.UI.Page {
         string insertSQL;
 
         insertSQL = "INSERT INTO ChipDisposal (" +
-                    "producer_id,qty_id,date_available,date_expire,price"+
+                    "producer_id,qty_id,date_available,date_expire"+
                     ") VALUES ("+
-                    "@producer_id, @qty_id, @date_available, @date_expire";
+                    "@producer_id, @qty_id, @date_available, @date_expire"+
+                    ")";
 
         SqlConnection con = new SqlConnection(connectionString);
         SqlCommand cmd = new SqlCommand(insertSQL, con);
 
         cmd.Parameters.AddWithValue("@producer_id",91);
-        cmd.Parameters.AddWithValue("@qty_id", ddlChipQuantity.SelectedValue);
-        cmd.Parameters.AddWithValue("@date_available", cldDateAvailable.SelectedDate.ToLongTimeString());
-        cmd.Parameters.AddWithValue("@date_expire", cldDateExpire.SelectedDate.ToLongTimeString());
+        cmd.Parameters.AddWithValue("@qty_id", ddlChipQuantity.SelectedItem.Value);
+        cmd.Parameters.AddWithValue("@date_available", cldDateAvailable.SelectedDate);
+        cmd.Parameters.AddWithValue("@date_expire", cldDateExpire.SelectedDate);
 
         // Try to open the database and execute the update.
         int added = 0;

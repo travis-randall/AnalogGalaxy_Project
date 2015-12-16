@@ -17,17 +17,18 @@ public partial class Chip_request : System.Web.UI.Page {
     protected void Button1_Click(object sender, EventArgs e) {
         string insertSQL;
         insertSQL = "INSERT INTO ChipRequest (" +
-                    "consumer_id,qty_id,date_available,date_expire,price" +
+                    "customer_id,qty_id,date_available,date_expire" +
                     ") VALUES (" +
-                    "@consumer_id, @qty_id, @date_available, @date_expire";
+                    "@customer_id, @qty_id, @date_available, @date_expire"+
+                    ")";
 
         SqlConnection con = new SqlConnection(connectionString);
         SqlCommand cmd = new SqlCommand(insertSQL, con);
 
-        cmd.Parameters.AddWithValue("@consumer_id", 91);
-        cmd.Parameters.AddWithValue("@qty_id", ddlChipQuantity.SelectedValue);
-        cmd.Parameters.AddWithValue("@date_available", cldDateAvailable.SelectedDate.ToLongTimeString());
-        cmd.Parameters.AddWithValue("@date_expire", cldDateExpire.SelectedDate.ToLongTimeString());
+        cmd.Parameters.AddWithValue("@customer_id", 91);
+        cmd.Parameters.AddWithValue("@qty_id", ddlChipQuantity.SelectedItem.Value);
+        cmd.Parameters.AddWithValue("@date_available", cldDateAvailable.SelectedDate);
+        cmd.Parameters.AddWithValue("@date_expire", cldDateExpire.SelectedDate);
 
         // Try to open the database and execute the update.
         int added = 0;
@@ -45,7 +46,7 @@ public partial class Chip_request : System.Web.UI.Page {
 
         // If the insert succeeded, refresh the author list.
         if (added > 0) {
-            Response.Redirect("Producer-dashboard.aspx");
+            Response.Redirect("Customer-dashboard.aspx");
         }
     }
 }
