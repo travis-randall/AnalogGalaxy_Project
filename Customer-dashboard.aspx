@@ -7,7 +7,7 @@
     <uc1:UserInfoControl runat="server" ID="UserInfoControl" />
 
         <div id="content">
-            <asp:Button ID="Button1" runat="server" Text="Chip Request Form" OnClick="Button1_Click" />
+            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Chip Request Form</asp:LinkButton>
         </div>
         <h2>Active Chip Request</h2>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:ChipDrop %>' DeleteCommand="DELETE FROM [ChipRequest] WHERE [request_id] = @request_id" InsertCommand="INSERT INTO [ChipRequest] ([request_id], [customer_id], [qty_id], [date_available], [date_expire]) VALUES (@request_id, @customer_id, @qty_id, @date_available, @date_expire)" SelectCommand="SELECT cr.request_id, cr.customer_id, cr.qty_id, cq.description, cr.date_available, cr.date_expire FROM ChipRequest AS cr JOIN ChipQty AS cq ON (cr.qty_id = cq.qty_id)" UpdateCommand="UPDATE [ChipRequest] SET [customer_id] = @customer_id, [qty_id] = @qty_id, [date_available] = @date_available, [date_expire] = @date_expire WHERE [request_id] = @request_id">
