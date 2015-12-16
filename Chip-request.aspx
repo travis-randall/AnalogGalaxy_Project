@@ -26,10 +26,10 @@
            </tr>
            <tr>
                <td>
-                   <asp:Calendar ID="cldDateAvailable" runat="server"></asp:Calendar>
+                   <asp:Calendar ID="cldDateAvailable" runat="server">Date Available</asp:Calendar>
                </td>
                <td>
-                   <asp:Calendar ID="cldDateExpire" runat="server"></asp:Calendar>
+                   <asp:Calendar ID="cldDateExpire" runat="server">Date Expire</asp:Calendar>
                </td>
            </tr>
            <tr>

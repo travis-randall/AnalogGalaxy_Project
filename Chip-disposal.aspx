@@ -21,8 +21,8 @@
                </td>
            </tr>
             <tr>
-               <td><asp:Label ID="lblDateAvailable" runat="server"></asp:Label></td>
-               <td><asp:Label ID="lblDateExpire" runat="server"></asp:Label></td>
+               <td><asp:Label ID="lblDateAvailable" runat="server">Date Available</asp:Label></td>
+               <td><asp:Label ID="lblDateExpire" runat="server">Date Expire</asp:Label></td>
            </tr>
            <tr>
                <td>
