@@ -2,25 +2,6 @@
 
 <h1>Welcome <asp:LoginName ID="LoginName1" runat="server" /></h1>
 
-<table>
-                <tr>
-                    <td>
-                        <asp:Label ID="Label1" runat="server" ReadOnly="true" Text="First Name"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:TextBox ID="TextBox1" ReadOnly="true" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="Label2" runat="server" ReadOnly="true" Text="Last Name"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:TextBox ID="TextBox2" ReadOnly="true" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-    </table>
-
 
 <h2>Change Your Password</h2>
 <asp:ChangePassword ID="ChangePassword1" runat="server" BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em">

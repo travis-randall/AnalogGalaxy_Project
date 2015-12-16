@@ -143,7 +143,7 @@
                             <div>
                                 <ul>
                                     <li id="li_consumer_dash" runat="server">
-                                        <asp:HyperLink ID="hyp_consumer_dash" runat="server" NavigateUrl="~/Consumer-dashboard.aspx">Consumer Dashboard</asp:HyperLink>
+                                        <asp:HyperLink ID="hyp_consumer_dash" runat="server" NavigateUrl="~/Customer-dashboard.aspx">Consumer Dashboard</asp:HyperLink>
 	    				                <%--<a href="about.html">About</a>--%>
 		    		                </li>
                                     <li id="li_producer_dash" runat="server">
