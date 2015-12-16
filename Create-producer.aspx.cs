@@ -17,13 +17,20 @@ public partial class Default8 : System.Web.UI.Page {
 
     protected void Button1_Click(object sender, EventArgs e)
     {
+   
+        Session["FirstName"] = TextBox1.Text;
+        Session["PhoneNumber"] = TextBox2.Text;
+        Session["Street"] = TextBox3.Text;
+        Session["City"] = TextBox4.Text;
+        Session["State"] = DropDownListState.Text;
+        Session["Zip"] = TextBox6.Text;
 
-        Profile.FirstName = TextBox1.Text;
-        Profile.PhoneNumber = TextBox2.Text;
-        Profile.Address.Street = TextBox3.Text;
-        Profile.Address.City = TextBox4.Text;
-        Profile.Address.State = DropDownListState.Text;
-        Profile.Address.Zip = TextBox6.Text;
+        //Profile.FirstName = TextBox1.Text;
+        //Profile.PhoneNumber = TextBox2.Text;
+        //Profile.Address.Street = TextBox3.Text;
+        //Profile.Address.City = TextBox4.Text;
+        //Profile.Address.State = DropDownListState.Text;
+        //Profile.Address.Zip = TextBox6.Text;
 
         if (TextBox1.Text == "" || TextBox2.Text == "" || TextBox3.Text == "" || TextBox4.Text == "" || DropDownListState.Text == "" || TextBox6.Text == "" )
         {
@@ -67,6 +74,7 @@ public partial class Default8 : System.Web.UI.Page {
         finally
         {
             con.Close();
+            Response.Redirect("Default.aspx");
         }
     }
 }

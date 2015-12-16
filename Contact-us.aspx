@@ -11,11 +11,13 @@
             <asp:Label ID="lblName" runat="server" Text="Your Name" /><br />
             <asp:TextBox ID="txtName" runat="server"></asp:TextBox><br /><br />
             <asp:Label ID="lblEmail" runat="server" Text="Email" /><br />
+            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
             <asp:RegularExpressionValidator ID="regexEmailValid" runat="server" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail" ErrorMessage="Invalid Email Format"></asp:RegularExpressionValidator>
-            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox><br /><br />
+            <br /><br />
             <asp:Label ID="lblMessage" runat="server" Text="Message" /><br />
             <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine"></asp:TextBox><br />
             <br />
-            <asp:Button ID="Button1" runat="server" Text="Send" />
+            <asp:Button ID="Button1" runat="server" Text="Send" OnClick="Button1_Click" />
+        <asp:Label ID="lblResults" runat="server"></asp:Label>
     </div>
 </asp:Content>
