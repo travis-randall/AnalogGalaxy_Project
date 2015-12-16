@@ -10,8 +10,7 @@ public partial class Default6 : System.Web.UI.Page {
 
     }
 
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        //Response.Redirect(Chip-request.aspx);
+    protected void LinkButton1_Click(object sender, EventArgs e) {
+        Response.Redirect("Chip-request.aspx");
     }
 }

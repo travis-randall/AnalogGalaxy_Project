@@ -2,7 +2,6 @@
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
 
-
      <h2>Enter Additional Information</h2>
     <table>
                 <tr>
@@ -63,5 +62,4 @@
                 </tr>
             </table>
     <asp:Button ID="Button1" runat="server" Text="Save" />
-
 </asp:Content>

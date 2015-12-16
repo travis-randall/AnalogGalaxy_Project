@@ -9,4 +9,8 @@ public partial class Producer_dashboard : System.Web.UI.Page {
     protected void Page_Load(object sender, EventArgs e) {
 
     }
+
+    protected void LinkButton1_Click(object sender, EventArgs e) {
+        Response.Redirect("Chip-request.aspx");
+    }
 }
